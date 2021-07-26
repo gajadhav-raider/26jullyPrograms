@@ -1,0 +1,38 @@
+//App.css file
+.btn_incre:hover{
+  color: green;
+}
+.btn_decre:hover{
+  color:red;
+}
+//App.js file
+import { useState } from "react";
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';//Custom Button import from brawser.
+import Tooltip from '@material-ui/core/Tooltip';//import tooltip from brawser.
+ const App=()=>{
+   const [value,setvalue]= useState(0);
+     const Increment=()=>{
+       setvalue(value+1);
+     }  
+      const Decrement=()=>{
+        if(value>0){
+          setvalue(value-1)
+        }
+        else{
+          alert("Zero Value is Riched");
+        }
+      }
+       return(<>
+             <h1>{value}</h1>
+             <br/>
+             <Tooltip title="Add">              
+             <Button onClick={Increment} className="btn_incre"><AddIcon/></Button>
+             </Tooltip>
+             <Tooltip title="Delete">
+               <Button onClick={Decrement} className="btn_decre"><DeleteIcon /></Button>
+             </Tooltip>
+           </>);
+ }
+ export default App;

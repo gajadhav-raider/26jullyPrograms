@@ -1,0 +1,19 @@
+fisrt install npm
+npm is install with Node js when we installing Node js
+then type this commond on cmd npm install react-digital-clock
+//App.js
+import React from 'react';
+import Clock from 'react-digital-clock';
+const App =()=>{
+     return (<><h1><Clock/>
+     </h1></>);
+};
+export default App;
+
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<><App/></>,document.getElementById('root'));
+
